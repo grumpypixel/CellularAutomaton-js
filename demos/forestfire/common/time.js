@@ -20,11 +20,11 @@ class Time {
 	}
 
 	update() {
-		if (this.running == false) {
+		if (this.running === false) {
 			return;
 		}
 
-		this.frameCounter++;
+		this.frameCount++;
 
 		const now = this.now();
 		this.totalElapsedTime = now - this.startTime;
@@ -36,11 +36,11 @@ class Time {
 	}
 
 	now() {
-		return (performance || Date).now();
+		return Date.now();
 	}
 
 	reset() {
-		this.frameCounter = 0;
+		this.frameCount = 0;
 		this.timeScale = 1.0;
 		this.totalElapsedTime = 0;
 		this.startTime = null;
@@ -48,6 +48,6 @@ class Time {
 		this.elapsedSinceLastFrame = 0;
 		this.deltaTime = 0.0;
 		this.unscaledDeltaTime = 0.0;
-		this.running = true;
+		this.running = false;
 	}
 }

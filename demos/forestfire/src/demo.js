@@ -28,6 +28,7 @@ window.onload = function() {
 
 	createColorPalettes();
 
+	timer.start();
 	window.requestAnimationFrame(updateFrame);
 }
 
@@ -62,7 +63,7 @@ function updateFrame() {
 	renderForestFire(context);
 
 	CanvasRenderer.drawText(context, 10, 25, forestFire.getGeneration(), '#ff0', 'left', 'bold 20px Courier');
-	CanvasRenderer.drawText(context, canvas.width-10, 25, (timer.deltaTime * 1000).toFixed(2), '#f0f', 'right', 'bold 20px Courier');
+	// CanvasRenderer.drawText(context, canvas.width-10, 25, (timer.deltaTime * 1000).toFixed(2), '#f0f', 'right', 'bold 20px Courier');
 
 	window.requestAnimationFrame(updateFrame);
 }
